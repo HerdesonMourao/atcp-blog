@@ -10,11 +10,12 @@ const replace = require('gulp-replace');
 const uglify = require('gulp-uglify');
 const useref = require('gulp-useref-plus');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+// const sass = require('gulp-sass');
 const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");    
 const cleanCSS = require('gulp-clean-css');
 const rtlcss = require('gulp-rtlcss');
+const sass = require('gulp-sass')(require('sass'));
 
 const paths = {
   base:   {
