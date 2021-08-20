@@ -10,7 +10,8 @@
     "> 2%"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulptask": "hugo; gulp templates"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
