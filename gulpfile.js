@@ -72,6 +72,10 @@ const paths = {
       dir:    './src/partials',
       files:  './src/partials/**/*'
     },
+    posts:   {
+      dir:    './src/posts',
+      files:  './src/posts/**/*'
+    },
     scss:   {
       dir:    './src/assets/scss',
       files:  './src/assets/scss/**/*',
@@ -99,6 +103,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.src.js.dir], gulp.series('js','browsersyncReload'));
   gulp.watch([paths.src.js.pages], gulp.series('jsPages','browsersyncReload'));
   gulp.watch([paths.src.html.files, paths.src.partials.files], gulp.series('fileinclude', 'browsersyncReload'));
+  gulp.watch([paths.src.html.files, paths.src.posts.files], gulp.series('fileinclude', 'browsersyncReload'));
 });
 
 gulp.task('js', function() {
@@ -161,7 +166,8 @@ gulp.task('fileinclude', function(callback) {
     .src([
       paths.src.html.files,
       '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files
+      '!' + paths.src.partials.files,
+      '!' + paths.src.posts.files
     ])
     .pipe(fileinclude({
       prefix: '@@',
@@ -187,6 +193,7 @@ gulp.task('copy:all', function() {
     .src([
       paths.src.base.files,
       '!' + paths.src.partials.dir, '!' + paths.src.partials.files,
+      '!' + paths.src.posts.dir, '!' + paths.src.posts.files,
       '!' + paths.src.scss.dir, '!' + paths.src.scss.files,
       '!' + paths.src.js.dir, '!' + paths.src.js.files, '!' + paths.src.js.main, 
       '!' + paths.src.html.files,
@@ -208,7 +215,8 @@ gulp.task('html', function() {
     .src([
       paths.src.html.files,
       '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files
+      '!' + paths.src.partials.files,
+      '!' + paths.src.posts.files
     ])
     .pipe(fileinclude({
       prefix: '@@',
