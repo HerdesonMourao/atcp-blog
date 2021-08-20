@@ -1,14 +1,14 @@
-# Skote #
+# ATCP.DEV.BR #
 
-Skote Theme by Themesbrand.
+Arranjo técnico de cunho provisório.
 
 ### Getting Started ###
 
-The steps to compile and get started with development are covered in detail in documentation mentioned above, but the summary is:
+clone o repositório e rode os comandos:
 
-- yarn install
+- npm install
 - gulp
 
 ### Support ###
 
-Themesbrand is happy to provide support for issues. Shoot us an email at support@themesbrand.com and we'll get you squared away.
+Leia o codígo.
